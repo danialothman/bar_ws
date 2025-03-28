@@ -28,6 +28,6 @@ echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
 echo "source ~/bar_ws/install/setup.bash" >> ~/.bashrc
 
 # Add GAZEBO path so we can easily include models. Must use merge install. 
-# Sholud be able to use package:// syntax now. 
+# Should be able to use package:// syntax now. 
 echo "export GZ_SIM_RESOURCE_PATH=~/bar_ws/install/share/:/opt/ros/jazzy/share/" >> ~/.bashrc
 echo "export SDF_PATH=~/bar_ws/install/share/:/opt/ros/jazzy/share/" >> ~/.bashrc

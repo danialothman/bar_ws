@@ -72,18 +72,18 @@ def generate_launch_description():
 
     # Step 5: Enable the ros2 controllers
     start_controllers  = Node(
-                package="controller_manager",
-                executable="spawner",
-                arguments=['joint_state_broadcaster', 'diff_drive_base_controller'],
-                output="screen",
-            )
+        package="controller_manager",
+        executable="spawner",
+        arguments=['joint_state_broadcaster', 'diff_drive_base_controller'],
+        output="screen",
+    )
 
     twist_stamper = Node(
         package="twist_stamper",
         executable="twist_stamper.py",
         remappings=[("/cmd_vel_in", "/cmd_vel"),
                        ("/cmd_vel_out",  "/diff_drive_base_controller/cmd_vel")],
-        parameters=[{"use_sim_time","True"}],
+        parameters=[{"use_sim_time":True}],
         output="screen"
     )  
 
@@ -93,8 +93,8 @@ def generate_launch_description():
     static_pub = Node(package="tf2_ros", 
                       executable="static_transform_publisher",
                       arguments=["0","0","0","0","0","0", "lidar_2d_link", "krytn/base_footprint/lidar_2d_v1", ])
-    
-  
+
+
     return LaunchDescription([gazebo_sim, bridge, robot, twist_stamper,
                               robot_steering, robot_state_publisher,
                               start_controllers, static_pub])
