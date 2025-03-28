@@ -24,3 +24,10 @@ gz sim --versions
 
 ```
 
+## ROSBOARD
+
+start rosboard. https://github.com/dheera/rosboard
+
+```
+ros2 run rosboard rosboard_node 
+```
