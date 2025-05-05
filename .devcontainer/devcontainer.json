@@ -9,7 +9,7 @@
         "6080:80"
     ],
     "containerEnv": {
-        "DISPLAY": ":1",
+        "DISPLAY": ":1"
     },
     "customizations": {
         "vscode": {
